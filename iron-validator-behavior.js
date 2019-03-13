@@ -1,11 +1,11 @@
-<!--
+/**
 @license
 Copyright 2017 Mulesoft.
 All rights reserved.
--->
-<link rel="import" href="../polymer/lib/utils/mixin.html">
-<link rel="import" href="../iron-meta/iron-meta.html">
-<script>
+*/
+import {dedupingMixin} from '@polymer/polymer/lib/utils/mixin.js';
+import {IronMeta} from '@polymer/iron-meta/iron-meta.js';
+
 /**
  * ** Anypoint version of the component **
  *
@@ -18,7 +18,7 @@ All rights reserved.
  * @demo demo/index.html
  * @polymerBehavior
  */
-Polymer.IronValidatorBehavior = {
+export const IronValidatorBehavior = {
   properties: {
     /**
      * Error message to display when the form control did not passed the validation.
@@ -26,7 +26,7 @@ Polymer.IronValidatorBehavior = {
     message: String
   },
   ready: function() {
-    new Polymer.IronMeta({
+    new IronMeta({
       type: 'validator',
       key: this.is,
       value: this
@@ -40,6 +40,7 @@ Polymer.IronValidatorBehavior = {
    */
   validate: function(values) {}
 };
+
 /**
  * ** Anypoint version of the component **
  *
@@ -53,9 +54,8 @@ Polymer.IronValidatorBehavior = {
  *
  * @polymer
  * @mixinFunction
- * @memberof Polymer
  */
-Polymer.IronValidatorMixin = Polymer.dedupingMixin((base) => {
+export const IronValidatorMixin = dedupingMixin((base) => {
   /**
    * @polymer
    * @mixinClass
@@ -71,7 +71,7 @@ Polymer.IronValidatorMixin = Polymer.dedupingMixin((base) => {
     }
     constructor() {
       super();
-      new Polymer.IronMeta({
+      new IronMeta({
         type: 'validator',
         key: this.is || this.constructor.is,
         value: this
@@ -87,4 +87,3 @@ Polymer.IronValidatorMixin = Polymer.dedupingMixin((base) => {
   }
 return Hmixin;
 });
-</script>

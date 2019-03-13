@@ -1,26 +1,43 @@
 {
-  "name": "iron-validator-behavior",
   "description": "Anypoint version of iron validator.",
-  "version": "2.0.0",
+  "keywords": [
+    "anypoint",
+    "behaviors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mulesoft-labs/iron-validator-behavior.git"
+  },
+  "name": "@polymer/iron-validator-behavior",
+  "version": "3.0.0-preview.1",
   "license": "(C) MuleSoft. All rights reserved.",
   "author": "Pawel Psztyc",
   "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.1.1"
+    "@polymer/gen-typescript-declarations": "^1.6.1",
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "wct-browser-legacy": "^1.0.2",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/iron-test-helpers": "^3.0.0"
   },
-  "private": true,
-  "main": "iron-validator-behavior.html",
+  "main": "iron-validator-behavior.js",
   "scripts": {
     "lint": "polymer lint iron-validator-behavior.html",
     "test-sauce": "polymer test --plugin sauce --job-name \"iron-validator-behavior:local-test\"",
     "test": "polymer test --plugin local",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mulesoft-labs/iron-validator-behavior.git"
-  },
   "bugs": {
     "url": "https://github.com/mulesoft-labs/iron-validator-behavior/issues",
     "email": "arc@mulesoft.com"
+  },
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
   }
 }
